@@ -1,0 +1,45 @@
+0.  Jpeg and png supports 16.8 million colors.  Gifs and bmps only support 256 colors.  
+
+1.  Gif files support animation
+
+2.  Lossy compression, compresses a file in such a way that not all the data is stored in the compression and when
+    the image is uncompressed it is not the same as the original image.  When compressed it takes up more space than lossless
+    compression which when uncompressed returns an exact copy of the original image.
+    
+3.  Jpeg is lossey compressed.
+
+4.  When a file is deleted on a FAT the pointer is deleted, however the data still exists on the hard drive
+    it is just unknown in the table where to look on the hard drivce to access those files.
+    
+5.  Short of physically distengrating your hard drive you can sanatize your drive by going over it with junk data to clear
+    the stored information in those blocks.
+
+6.  Stdint.h is a library containing different types of integers like unsigned ints and ints capable of storing larger numbers
+
+7.  The benefit of using int_32t is that it allows you to use both positive and negative numbers up to 2^30-1
+    while an uint_32t only gives positive numbers up to 2^31-1.  The other uints listed only do positive numbers but only 
+    go up to only use 1 byte or 2 bytes saving space.
+    
+8.  A BYTE is 1 byte.  A WORD is 2 bytes and a DWORD is 4 bytes.  A Long is 4 bytes.
+
+9.  The first two bytes of a bmp file can be represented in as "BM".
+
+10. The bfSize file has the size of the entire bmp file.  The biSize is the size of the file without the headers.
+
+11. If bfHeight is negative that means the image is stored so the right side up, otherwise it is stored upside down.
+
+12. biBitCount is where the information is stored on the number of bits per pixel.
+
+13. fopen may return null if the system is out of memory resources or does not have permission to write the file.
+
+14. The third argument of fread is always 1 because this is the parameter that tells fread how many bytes to read
+    at a time.
+    
+15. The padding would be 3 given a biWidth of 3.
+
+16. fseek moves the file steam pointer to a different position offset by a specified amount
+    from the location specified.
+
+17. SEEK_CUR is the current position of the file in the file stream.
+
+18. TODO

@@ -1,0 +1,26 @@
+0.  Pneumonoultramicroscopicsilicovolcanoconiosis is a long word said to be the 
+    disease from inhaling volcanic dusts.
+
+1.  getrusage shows the resources used by a program
+
+2.  There are 17 members to the struct rusage
+
+3.  Because getrusage returns a struct with all the members in it.  We would have to pull out the information 
+    from the struct into a new variable to pass that otherwise we would be forced to copy all the variable members
+    to pass it on.
+
+4.  Speller reads in the first character of the text file.  It will stop if it runs into the end of the file.  
+    If it reads a letter or apostrophe it will append it to the word string.  If it finds a string that is longer
+    than 46 characters it determines it is not a word and just pulls out the rest of the string and resets its index 
+    to 0.  If it finds a number it just pulls out the rest of the string and resets the index to 0.  If it comes to 
+    the end of a word and the index is greater than 0, it terminates the string and updates the word counter.  If it 
+    finds the word is misspelled it prints it out and updates the misspelled words counter.
+
+5.  fscanf would not be as successful because as it read out the string it wouldn't be able to isolate the 
+    numbers that occur or non apostophe punctuation.
+
+6.  Check and load parameters are constant because the the values word and dictionary are constants in the speller file.
+7.  TODO
+8.  TODO
+9.  TODO
+10. TODO

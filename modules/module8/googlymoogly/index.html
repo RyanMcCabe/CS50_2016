@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <title>Googly Moogly Search</title>
+    </head>
+    <body>
+        <h1>Googly Moogly Search</h1>
+        
+        <form id="form-google" action="https://www.google.com/search" method="get">
+            <div id="field-username" class="container-field">
+                <label>Your name:</label>
+                <br/>
+                <input name="username" type="text"/>
+                <label class="feedback-error"></label>
+            </div>
+            <div id="field-search" class="container-field">
+                <label>Search:</label>
+                <br/>
+                <input name="q" type="text"/>
+                <label class="feedback-error"></label>
+            </div>
+            <br/>
+            <input type="submit" value="Googly Moogly Search"/>
+        </form>
+        
+        <script type="text/javascript" src="scripts/validate.js"></script>
+        
+    </body>
+</html>

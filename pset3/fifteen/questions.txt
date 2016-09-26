@@ -1,0 +1,9 @@
+questions.txt
+
+Computer Science 50
+Problem Set 3
+
+0. The dimensions in the game the framework allows are any square size between 3 and 9, inclusive.
+1. The data structure of the board is a 2 dimensional array
+2. Greet is the function called to greet a player at the start
+3. The functions we need to implement are init, draw, move and won.
