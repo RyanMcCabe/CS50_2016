@@ -74,10 +74,34 @@ $(function() {
  */
 function addMarker(place)
 {
+        
+    var myLatLng = new google.maps.LatLng(place.latitude, place.longitude);
     var marker = new google.maps.Marker({
-        position:  {lat: place["latitude"], 
-                    lng: place["longitude"]},
-        title:  place["place_name"]
+        position: myLatLng,
+        title: place.place_name + " " +place.admin_code1 +", " + place.postal_code,
+        labelContent: place.place_name
+    });
+    
+    marker.setMap(map);
+    var parameters = {geo: place.postal_code};
+    var content = '<div id="content"><h1>' + place.place_name + ", " + place.admin_code1 + '</h1><ul>';
+    
+    var url = "../articles.php";
+    $.getJSON(url, parameters)
+    .done(function(data){
+        for (article in data){
+            content = content + "<li><a href=" + data[article].link + ' target="_blank">' + data[article].title + "</li>";
+        }
+        content = content + "</ul></p></div>";
+        var infowindow = new google.maps.InfoWindow({
+            content: content    
+        });
+            
+        marker.addListener('click',function(){
+            infowindow.open(map, marker);
+        });
+    
+        markers.push(marker);
     });
 }
 
@@ -163,7 +187,10 @@ function hideInfo()
  */
 function removeMarkers()
 {
-    //todo
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+    }
+    markers = [];
 }
 
 /**
